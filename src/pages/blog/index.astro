@@ -1,0 +1,31 @@
+---
+const posts = await Astro.glob('../../content/blog/*.md')
+
+import Layout from '../../layouts/Layout.astro'
+
+const formatDate = (date:string) =>  new Date(date).toLocaleDateString('en-us', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<Layout title="Blog • Tobiasz Ciesielski">
+  <h1 class="text-3xl tracking-wider mb-10">Blog</h1>
+
+  <div class="flex flex-col gap-5">
+  {posts.reverse().map((post) => <ul>
+    <a href={`blog/${post.frontmatter.slug}`} >
+    <li>
+      <div class="hover:underline text-lg">
+      {post.frontmatter.title}
+    </div>
+
+    <div class="text-xs">
+      {formatDate(post.frontmatter.publicationDate)}
+    </div>
+      <li>
+      </a>
+    </ul>)}
+  </div>
+</Layout>

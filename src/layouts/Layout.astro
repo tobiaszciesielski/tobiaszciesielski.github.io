@@ -19,36 +19,38 @@ const currentPath = Astro.url.pathname
     <title>{title}</title>
   </head>
 
-  <body class="max-w-[700px] p-4 mx-auto font-body bg-slate-950 text-slate-50">
-    <nav class="mb-10">
+  <body
+    class="max-w-[700px] p-4 mx-auto font-body bg-slate-950 text-slate-50 tracking-[0.0125rem]"
+  >
+    <nav class="mb-10 mt-5">
       <div class="flex justify-between">
         <a href="/">
           <div class="flex flex-col">
-            <h1 class="text-lg font-bold -mb-1">Tobiasz Ciesielski</h1>
-            <p class="text-sm">Front-end Developer</p>
+            <h1 class="sm:text-lg font-semibold -mb-1">Tobiasz Ciesielski</h1>
+            <p class="text-xs sm:text-sm">Front-end Developer</p>
           </div>
         </a>
 
-        <ul class="flex gap-5">
+        <ul class="flex gap-3 sm:gap-5">
           <a
             href="/"
             class={currentPath === '/' ? 'underline' : 'hover:underline'}
           >
-            <li>Home</li>
+            <li class="text-xs sm:text-sm">About</li>
           </a>
 
           <a
             href="/blog"
             class={currentPath === '/blog' ? 'underline' : 'hover:underline'}
           >
-            <li>Blog</li>
+            <li class="text-xs sm:text-sm">Blog</li>
           </a>
 
           <a
             href="/talks"
             class={currentPath === '/talks' ? 'underline' : 'hover:underline'}
           >
-            <li>Talks</li>
+            <li class="text-xs sm:text-sm">Talks</li>
           </a>
 
           <a
@@ -57,7 +59,7 @@ const currentPath = Astro.url.pathname
               ? 'underline'
               : 'hover:underline'}
           >
-            <li>Snippets</li>
+            <li class="text-xs sm:text-sm">Today I learned</li>
           </a>
         </ul>
       </div>
