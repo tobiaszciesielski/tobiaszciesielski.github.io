@@ -1,8 +1,8 @@
 ---
 title: Hello world
 description: Find out what makes Astro awesome!
-slug: hello-world
 publicationDate: 2024-08-06
+image: http://abba.com/image.png
 ---
 
 # Hi there!

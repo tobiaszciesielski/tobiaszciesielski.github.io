@@ -1,7 +1,36 @@
 ---
+import image from '../images/image.png'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Strona głowna • Tobiasz Ciesielski">
-  <h1 class="text-3xl tracking-wider">Hi 👋</h1>
+  <div class="flex flex-col sm:flex-row">
+    <div>
+      <h1 class="text-3xl mb-3 mt-8 tracking-wider">Siemka 👋</h1>
+
+      <p class="mb-4 text-gray-300">
+        Jestem programistą, speakerem, twórcą internetowym, triathlonistą,
+        piekarzem, zajawkowiczem.
+      </p>
+
+      <p class="mb-4">
+        Nie ma dla mnie rzeczy niemożliwych, co udowodniłem sobie już
+        wielokrotnie.
+      </p>
+
+      <ul class="flex ml-4 mb-4 flex-col gap-2 list-disc">
+        <li>
+          Wystąpiłem na jednej z największych konferencji IT w Europie -
+          NgPoland,
+        </li>
+        <li>Ukończyłem 1/2 Iron Man ponieżej 5 godzin.</li>
+      </ul>
+
+      <p class="mb-4">
+        Nie mam określonego jasnego celu. Fascynuje mnie natomaist droga, którą
+        idę. Na tej stronie dzielę się z Tobą moją przygodą 🫡
+      </p>
+    </div>
+    <img class="self-center w-[250px]" src={image.src} />
+  </div>
 </Layout>

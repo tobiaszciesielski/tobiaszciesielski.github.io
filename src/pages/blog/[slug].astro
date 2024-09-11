@@ -1,5 +1,5 @@
 ---
-import type { MarkdownInstance } from 'astro'
+import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 
 interface Frontmatter {
@@ -10,13 +10,11 @@ interface Frontmatter {
 }
 
 export const getStaticPaths = async () => {
-  const posts: MarkdownInstance<Frontmatter>[] = await Astro.glob<Frontmatter>(
-    '../../content/blog/*.md'
-  )
+  const blogEntries = await getCollection('blog')
 
-  return posts.map((post) => ({
+  return blogEntries.map((post) => ({
     params: {
-      slug: post.frontmatter.slug,
+      slug: post.slug,
     },
     props: {
       post,
@@ -24,9 +22,16 @@ export const getStaticPaths = async () => {
   }))
 }
 
-const { Content } = Astro.props.post
+const { post } = Astro.props
+const { Content } = await post.render()
 ---
 
 <Layout title="Blog • Tobiasz Ciesielski">
+  <a href="/blog" class="hover:underline text-sm text-gray-500">← Wróć</a>
+
+  <h1 class="text-3xl tracking-wider mt-5 mb-10 text-center">
+    {post.data.title}
+  </h1>
+
   <Content />
 </Layout>

@@ -1,8 +1,8 @@
 ---
 title: My tools and configs
 description: Find out what makes Astro awesome!
-slug: my-tools-and-configs
 publicationDate: 2024-08-07
+image: http://abba.com/image.png
 ---
 
 # Hi there!

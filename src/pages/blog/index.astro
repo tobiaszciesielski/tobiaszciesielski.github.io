@@ -1,9 +1,10 @@
 ---
-const posts = await Astro.glob('../../content/blog/*.md')
+const posts = await getCollection('blog')
 
+import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 
-const formatDate = (date: string) =>
+const formatDate = (date: Date) =>
   new Date(date).toLocaleDateString('en-us', {
     year: 'numeric',
     month: 'long',
@@ -14,22 +15,16 @@ const formatDate = (date: string) =>
 <Layout title="Blog • Tobiasz Ciesielski">
   <h1 class="text-3xl tracking-wider mb-10">Blog</h1>
 
-  <div class="flex flex-col gap-5">
-    <ul>
-      {
-        posts.reverse().map((post) => (
-          <li>
-            <a href={`blog/${post.frontmatter.slug}`}>
-              <div class="hover:underline text-lg">
-                {post.frontmatter.title}
-              </div>
-              <div class="text-xs">
-                {formatDate(post.frontmatter.publicationDate)}
-              </div>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  <ul class="flex flex-col gap-5">
+    {
+      posts.reverse().map((post) => (
+        <li>
+          <a href={`blog/${post.slug}`}>
+            <div class="hover:underline text-lg">{post.data.title}</div>
+            <div class="text-xs">{formatDate(post.data.publicationDate)}</div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

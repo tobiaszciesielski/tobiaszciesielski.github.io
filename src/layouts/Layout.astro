@@ -22,7 +22,7 @@ const currentPath = Astro.url.pathname
   <body
     class="max-w-[700px] p-4 mx-auto font-body bg-slate-950 text-slate-50 tracking-[0.0125rem]"
   >
-    <nav class="mb-10 mt-5">
+    <nav class="mb-12 mt-5">
       <div class="flex justify-between">
         <a href="/">
           <div class="flex flex-col">
@@ -36,12 +36,14 @@ const currentPath = Astro.url.pathname
             href="/"
             class={currentPath === '/' ? 'underline' : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm">About</li>
+            <li class="text-xs sm:text-sm">O mnie</li>
           </a>
 
           <a
             href="/blog"
-            class={currentPath === '/blog' ? 'underline' : 'hover:underline'}
+            class={currentPath.includes('/blog')
+              ? 'underline'
+              : 'hover:underline'}
           >
             <li class="text-xs sm:text-sm">Blog</li>
           </a>
@@ -50,16 +52,16 @@ const currentPath = Astro.url.pathname
             href="/talks"
             class={currentPath === '/talks' ? 'underline' : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm">Talks</li>
+            <li class="text-xs sm:text-sm">Wystąpienia</li>
           </a>
 
           <a
             href="/snippets"
-            class={currentPath === '/snippets'
+            class={currentPath.includes('/til')
               ? 'underline'
               : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm">Today I learned</li>
+            <li class="text-xs sm:text-sm">Dziś nauczyłem się</li>
           </a>
         </ul>
       </div>
