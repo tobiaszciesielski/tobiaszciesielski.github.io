@@ -1,5 +1,5 @@
 ---
-title: Hello world
+title: Hello world! Witaj na moim blogu :)
 description: Find out what makes Astro awesome!
 publicationDate: 2024-08-06
 image: http://abba.com/image.png

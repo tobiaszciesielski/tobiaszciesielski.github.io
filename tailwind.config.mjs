@@ -5,6 +5,11 @@ export default {
     fontFamily: {
       body: ['Arial'],
     },
+    extend: {
+      spacing: {
+        18: '4.5rem',
+      },
+    },
   },
   plugins: [],
 }
