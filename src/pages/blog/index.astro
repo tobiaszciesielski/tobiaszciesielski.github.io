@@ -19,7 +19,7 @@ const formatDate = (date: Date) =>
     {
       posts.reverse().map((post) => (
         <li>
-          <a href={`blog/${post.slug}`}>
+          <a href={`/blog/${post.slug}`}>
             <div class="hover:underline text-lg">{post.data.title}</div>
             <div class="text-xs">{formatDate(post.data.publicationDate)}</div>
           </a>
