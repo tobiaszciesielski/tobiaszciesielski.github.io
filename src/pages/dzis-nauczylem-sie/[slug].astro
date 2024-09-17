@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+
+export const getStaticPaths = async () => {
+  const lessonsEntries = await getCollection('todayILearned')
+
+  return lessonsEntries.map((lesson) => ({
+    params: {
+      slug: lesson.slug,
+    },
+    props: {
+      lesson,
+    },
+  }))
+}
+
+const { lesson } = Astro.props
+const { Content } = await lesson.render()
+---
+
+<Layout title="Blog • Tobiasz Ciesielski">
+  <a href="/dzis-nauczylem-sie" class="hover:underline text-sm text-gray-500"
+    >← Wróć</a
+  >
+
+  <h1 class="text-3xl tracking-wider mt-5 mb-10 text-center">
+    {lesson.data.title}
+  </h1>
+
+  <Content />
+</Layout>

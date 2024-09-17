@@ -2,13 +2,6 @@
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 
-interface Frontmatter {
-  title: string
-  description: string
-  slug: string
-  publicationDate: string
-}
-
 export const getStaticPaths = async () => {
   const blogEntries = await getCollection('blog')
 

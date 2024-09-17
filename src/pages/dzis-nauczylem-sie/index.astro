@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+
+const lessons = await getCollection('todayILearned')
+
+const formatDate = (date: Date) =>
+  new Date(date).toLocaleDateString('pl-PL', {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  })
+---
+
+<Layout title="Dziś Nauczyłem Się • Tobiasz Ciesielski">
+  <h1 class="text-3xl tracking-wider mb-10">Dziś nauczyłem się 👨‍🏫</h1>
+
+  <p class="mb-4">
+    Chcę pokazać jak wyglądają realne problemy, które rozwiązuję na codzień w
+    pracy. Czasami są to też małe snippety kodu, które nie chcę, żeby mi
+    zginęły.
+  </p>
+
+  <p class="mb-8">
+    Licznik krótkich lekcji wskazuje na <b class="text-lg">
+      {lessons.length}
+    </b> i nadal się uczę 🧠
+  </p>
+
+  <ul class="flex flex-col gap-3">
+    {
+      lessons.reverse().map((lesson) => (
+        <li>
+          <a href={`/dzis-nauczylem-sie/${lesson.slug}`}>
+            <div class="flex gap-3 items-top">
+              <div class="text-slate-600">
+                {formatDate(lesson.data.publicationDate)}
+              </div>
+              <div class="hover:underline ">{lesson.data.title}</div>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

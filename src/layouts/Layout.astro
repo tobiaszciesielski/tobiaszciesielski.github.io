@@ -49,19 +49,21 @@ const currentPath = Astro.url.pathname
           </a>
 
           <a
-            href="/talks"
-            class={currentPath === '/talks' ? 'underline' : 'hover:underline'}
+            href="/wystapienia"
+            class={currentPath === '/wystapienia'
+              ? 'underline'
+              : 'hover:underline'}
           >
             <li class="text-xs sm:text-sm">Wystąpienia</li>
           </a>
 
           <a
-            href="/snippets"
-            class={currentPath.includes('/til')
+            href="/dzis-nauczylem-sie"
+            class={currentPath.includes('/dzis-nauczylem-sie')
               ? 'underline'
               : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm">Dziś nauczyłem się</li>
+            <li class="text-xs sm:text-sm" id="til">Dziś nauczyłem się</li>
           </a>
         </ul>
       </div>
@@ -71,4 +73,20 @@ const currentPath = Astro.url.pathname
       <slot />
     </main>
   </body>
+
+  <script>
+    const tilElement = document.getElementById('til')
+
+    const checkNavText = (tilElement: HTMLElement) => {
+      tilElement.innerText =
+        window.innerWidth > 640 ? 'Dziś nauczyłem się' : 'Dns'
+    }
+
+    if (tilElement) {
+      checkNavText(tilElement)
+      window.addEventListener('resize', () => {
+        checkNavText(tilElement)
+      })
+    }
+  </script>
 </html>
