@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
+
+import Prose from '../../components/prose/Prose.astro'
 import Layout from '../../layouts/Layout.astro'
 
 export const getStaticPaths = async () => {
@@ -20,13 +22,17 @@ const { Content } = await lesson.render()
 ---
 
 <Layout title="Blog • Tobiasz Ciesielski">
-  <a href="/dzis-nauczylem-sie" class="group text-sm text-gray-500">
-    ← <span class="group-hover:underline">Wróć</span></a
-  >
+  <div class="mb-10">
+    <a href="/dzis-nauczylem-sie" class="group text-sm text-gray-500">
+      ← <span class="group-hover:underline">Wróć</span></a
+    >
+  </div>
 
-  <h1 class="text-3xl tracking-wider mt-5 mb-10 text-center">
-    {lesson.data.title}
-  </h1>
+  <Prose>
+    <h1 class="text-center">
+      {lesson.data.title}
+    </h1>
 
-  <Content />
+    <Content />
+  </Prose>
 </Layout>

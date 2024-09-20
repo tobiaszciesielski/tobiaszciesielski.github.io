@@ -5,10 +5,7 @@ publicationDate: 2024-08-06
 image: http://abba.com/image.png
 ---
 
-# Hi there!
-
 This is my first blog post
-
 and here you can check what theme I use in my IDE
 
 ```ts
