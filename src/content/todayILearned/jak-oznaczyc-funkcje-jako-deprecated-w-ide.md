@@ -1,6 +1,6 @@
 ---
 title: Jak oznaczyć funkcję jako deprecated w ide
-publicationDate: 2024-09-17
+publicationDate: 2024-09-20
 ---
 
 ```ts

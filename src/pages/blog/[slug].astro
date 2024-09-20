@@ -5,14 +5,19 @@ import Layout from '../../layouts/Layout.astro'
 export const getStaticPaths = async () => {
   const blogEntries = await getCollection('blog')
 
-  return blogEntries.map((post) => ({
-    params: {
-      slug: post.slug,
-    },
-    props: {
-      post,
-    },
-  }))
+  return blogEntries
+    .sort(
+      (a, b) =>
+        a.data.publicationDate.getTime() - b.data.publicationDate.getTime()
+    )
+    .map((post) => ({
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    }))
 }
 
 const { post } = Astro.props
@@ -20,7 +25,9 @@ const { Content } = await post.render()
 ---
 
 <Layout title="Blog • Tobiasz Ciesielski">
-  <a href="/blog" class="hover:underline text-sm text-gray-500">← Wróć</a>
+  <a href="/blog" class="group text-sm text-gray-500">
+    ← <span class="group-hover:underline">Wróć</span></a
+  >
 
   <h1 class="text-3xl tracking-wider mt-5 mb-10 text-center">
     {post.data.title}

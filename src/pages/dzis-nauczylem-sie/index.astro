@@ -2,7 +2,11 @@
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 
-const lessons = await getCollection('todayILearned')
+let lessons = await getCollection('todayILearned')
+
+lessons = lessons.sort(
+  (a, b) => a.data.publicationDate.getTime() - b.data.publicationDate.getTime()
+)
 
 const formatDate = (date: Date) =>
   new Date(date).toLocaleDateString('pl-PL', {

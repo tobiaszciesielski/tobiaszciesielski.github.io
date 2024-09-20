@@ -1,6 +1,6 @@
 ---
 title: Jak przerwać request w efekcie NGRX
-publicationDate: 2024-09-17
+publicationDate: 2024-09-18
 ---
 
 Za pomocą operatora `takeUntil`.
