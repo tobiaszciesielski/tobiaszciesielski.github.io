@@ -1,5 +1,5 @@
 ---
-title: Moje narzędzia i konfiguracja
+title: Test article
 description: Find out what makes Astro awesome!
 publicationDate: 2024-08-07
 image: http://abba.com/image.png

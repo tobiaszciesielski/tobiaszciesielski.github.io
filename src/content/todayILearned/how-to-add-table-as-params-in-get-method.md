@@ -1,5 +1,5 @@
 ---
-title: Jak dodać tablicę jako parametr w metodzie GET?
+title: How to add table as params in GET method??
 publicationDate: 2024-09-17
 ---
 

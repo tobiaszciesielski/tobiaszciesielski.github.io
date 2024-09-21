@@ -27,7 +27,7 @@ const currentPath = Astro.url.pathname
         <a href="/">
           <div class="flex flex-col">
             <h1 class="sm:text-lg font-semibold -mb-1">Tobiasz Ciesielski</h1>
-            <p class="text-xs sm:text-sm">Front-end Developer</p>
+            <p class="sm:text-sm">Front-end Developer</p>
           </div>
         </a>
 
@@ -36,7 +36,7 @@ const currentPath = Astro.url.pathname
             href="/"
             class={currentPath === '/' ? 'underline' : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm">O mnie</li>
+            <li class="sm:text-sm">About</li>
           </a>
 
           <a
@@ -45,25 +45,23 @@ const currentPath = Astro.url.pathname
               ? 'underline'
               : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm">Blog</li>
+            <li class="sm:text-sm">Blog</li>
           </a>
 
           <a
-            href="/wystapienia"
-            class={currentPath === '/wystapienia'
-              ? 'underline'
-              : 'hover:underline'}
+            href="/talks"
+            class={currentPath === '/talks' ? 'underline' : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm">Wystąpienia</li>
+            <li class="sm:text-sm">Talks</li>
           </a>
 
           <a
-            href="/dzis-nauczylem-sie"
-            class={currentPath.includes('/dzis-nauczylem-sie')
+            href="/today-i-learned"
+            class={currentPath.includes('/today-i-learned')
               ? 'underline'
               : 'hover:underline'}
           >
-            <li class="text-xs sm:text-sm" id="til">Dziś nauczyłem się</li>
+            <li class="sm:text-sm" id="til">Today I Learned</li>
           </a>
         </ul>
       </div>
@@ -78,8 +76,7 @@ const currentPath = Astro.url.pathname
     const tilElement = document.getElementById('til')
 
     const checkNavText = (tilElement: HTMLElement) => {
-      tilElement.innerText =
-        window.innerWidth > 640 ? 'Dziś nauczyłem się' : 'Dns'
+      tilElement.innerText = window.innerWidth > 640 ? 'Today I Learned' : 'TIL'
     }
 
     if (tilElement) {

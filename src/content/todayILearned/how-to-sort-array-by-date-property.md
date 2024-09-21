@@ -1,5 +1,5 @@
 ---
-title: Jak posortować tablicę po polu obiektu typu Date
+title: How to sort array by date property?
 publicationDate: 2024-09-20
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: Jak przerwać request w efekcie NGRX
+title: How to cancel request in NGRX Effect?
 publicationDate: 2024-09-18
 ---
 
-Za pomocą operatora `takeUntiawkd owadk oakwdok awodkawokdoawkd oakwdokawodkaowk doawkd oawkdo kawodk awokd oawl`.
+Using `takeUntil` operator.
 
 ```ts
 function assert(condition: unknown, message?: string): asserts condition {
@@ -23,9 +23,9 @@ function assert(condition: unknown, message?: string): asserts condition {
 );
 ```
 
-Ważne!
+Important!
 
-Jeżeli `takeUntil` będzie tutaj to nigdy już ten efekt się nie wykona:
+If `takeUntil` will be placed outside switchMap, effect will be dead:
 
 ```ts
   private getEmailsWithStats$ = createEffect(() =>

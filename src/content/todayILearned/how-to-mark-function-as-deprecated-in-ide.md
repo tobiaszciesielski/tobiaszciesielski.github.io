@@ -1,5 +1,5 @@
 ---
-title: Jak oznaczyć funkcję jako deprecated w ide
+title: How to mark function as deprecated in IDE?
 publicationDate: 2024-09-20
 ---
 
