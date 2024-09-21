@@ -1,7 +1,65 @@
 ---
+import { Image } from 'astro:assets'
+import { publicSpeeches } from '../content/public-speeches'
 import Layout from '../layouts/Layout.astro'
+import { formatDate } from '../utils/date'
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/resources/images/*.{jpeg,jpg,png,gif}'
+)
 ---
 
 <Layout title="Wystąpienia • Tobiasz Ciesielski">
-  <h1 class="text-3xl tracking-wider">Wystąpienia 🎙️</h1>
+  <h1 class="text-3xl tracking-wider mb-10">Talks 🎙️</h1>
+
+  <ul class="flex flex-col gap-20">
+    {
+      publicSpeeches.map((speech) => (
+        <li class="flex flex-col gap-4">
+          <Image
+            class="rounded-md w-full max-h-[150px] object-cover self-center md:max-h-[180px] sm:max-w-[70%]"
+            src={images['/src/resources/images/' + speech.image]()}
+            alt={'Image from presentation ' + speech.topic}
+          />
+          <div>
+            <div class="flex flex-col mb-2">
+              <h2 class="text-xl md:text-2xl font-bold">{speech.topic}</h2>
+            </div>
+            <div class="flex w-full">
+              <div class="flex justify-between w-full">
+                <div class="flex flex-col">
+                  <span class="font-semibold"> {speech.event}</span>
+                  <span class="text-slate-400 text-sm">
+                    {formatDate(speech.date, 'long')}
+                  </span>
+                  <span class="text-slate-400 text-xs">{speech.place}</span>
+                </div>
+
+                <div class="flex self-end">
+                  <a class="text-pink-500 hover:underline" href={speech.slides}>
+                    Slides
+                  </a>
+                  {speech.recording && (
+                    <>
+                      <span class="mx-2 ">•</span>
+
+                      <a
+                        href={speech.recording}
+                        class="text-pink-500 hover:underline"
+                      >
+                        Watch on YouTube
+                        <span class="font-normal text-xs align-top">
+                          ({speech.language})
+                        </span>
+                      </a>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

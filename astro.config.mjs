@@ -1,6 +1,6 @@
 import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
-import BeardedThemeArcBlueberry from './src/resources/bearded-theme.json'
+import BeardedThemeArcBlueberry from './src/resources/code-theme/bearded-theme.json'
 
 // https://astro.build/config
 export default defineConfig({

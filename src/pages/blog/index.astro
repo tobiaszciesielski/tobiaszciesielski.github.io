@@ -3,13 +3,7 @@ const posts = await getCollection('blog')
 
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
-
-const formatDate = (date: Date) =>
-  new Date(date).toLocaleDateString('en-us', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+import { formatDate } from '../../utils/date'
 ---
 
 <Layout title="Blog • Tobiasz Ciesielski">
@@ -21,7 +15,9 @@ const formatDate = (date: Date) =>
         <li>
           <a href={`/blog/${post.slug}`}>
             <div class="hover:underline text-lg">{post.data.title}</div>
-            <div class="text-xs">{formatDate(post.data.publicationDate)}</div>
+            <div class="text-xs">
+              {formatDate(post.data.publicationDate, 'long')}
+            </div>
           </a>
         </li>
       ))

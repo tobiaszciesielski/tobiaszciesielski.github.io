@@ -12,7 +12,7 @@ and here you can check what theme I use in my IDE
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString('en-us', {
     year: 'numeric',
-    month: 'long',
+    month: 'numb',
     day: 'numeric',
   })
 ```

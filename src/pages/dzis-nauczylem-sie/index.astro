@@ -1,19 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
+import { formatDate } from '../../utils/date'
 
 let lessons = await getCollection('todayILearned')
 
 lessons = lessons.sort(
   (a, b) => a.data.publicationDate.getTime() - b.data.publicationDate.getTime()
 )
-
-const formatDate = (date: Date) =>
-  new Date(date).toLocaleDateString('pl-PL', {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-  })
 ---
 
 <Layout title="Dziś Nauczyłem Się • Tobiasz Ciesielski">
@@ -38,7 +32,7 @@ const formatDate = (date: Date) =>
           <a href={`/dzis-nauczylem-sie/${lesson.slug}`}>
             <div class="flex gap-3 items-top">
               <div class="text-slate-600">
-                {formatDate(lesson.data.publicationDate)}
+                {formatDate(lesson.data.publicationDate, 'numeric')}
               </div>
               <div class="hover:underline ">{lesson.data.title}</div>
             </div>
