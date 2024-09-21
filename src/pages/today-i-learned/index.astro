@@ -28,7 +28,7 @@ lessons = lessons.sort(
     {
       lessons.reverse().map((lesson) => (
         <li>
-          <a href={`/dzis-nauczylem-sie/${lesson.slug}`}>
+          <a href={`/today-i-learned/${lesson.slug}`}>
             <div class="flex gap-3 items-top">
               <div class="text-slate-600">
                 {formatDate(lesson.data.publicationDate, 'numeric')}
