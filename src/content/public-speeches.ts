@@ -72,7 +72,7 @@ export const publicSpeeches: PublicSpeech[] = [
       'https://docs.google.com/presentation/d/1_MCPM9CSAizyNTE6N1C9JPgfljio2bAqEewIeRtFDHM',
     date: new Date('2021-11-25'),
     image: 's-k-a-in-frontend.png',
-    recording: 'linkToRecording',
+    recording: 'https://www.youtube.com/watch?v=ehmy9zE59y8',
     place: 'Poznan, Poland',
   },
 ]
