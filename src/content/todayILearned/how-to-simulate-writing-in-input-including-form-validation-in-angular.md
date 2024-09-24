@@ -10,20 +10,20 @@ This child component had simple form with input and confirm button which was dis
 To simulate writing in input I used simply:
 
 ```ts
-const inputElement: HTMLInputElement | null =
-  harness.routeNativeElement.querySelector(
-    '[data-cy="modal-input"]'
-  ) as HTMLInputElement | null
+const inputElement = harness.routeNativeElement.querySelector<HTMLInputElement>(
+  '[data-cy="modal-input"]'
+)
 
-if (!inputElement) {
-  return fail('No input found')
-}
-
-inputElement.value = '100' // <- Here is simulation.
+inputElement.value = '100' // <- Here is simulation
 
 harness.detectChanges()
 
-expect(buttonElement.disabled).toBeTruthy() // Test fails
+const buttonElement =
+  harness.routeNativeElement.querySelector<HTMLButtonElement>(
+    '[data-cy="confirm-button"]'
+  )
+
+expect(buttonElement.disabled).toBeFalsy() // Test fails
 ```
 
 Unfortunately, this method was not triggering form validation and button remained disabled.
@@ -33,19 +33,19 @@ To fix it it I used dispatchEvent function that simulates input value change by 
 Here is working code.
 
 ```ts
-const inputElement: HTMLInputElement | null =
-  harness.routeNativeElement.querySelector(
-    '[data-cy="modal-input"]'
-  ) as HTMLInputElement | null
-
-if (!inputElement) {
-  return fail('No input found')
-}
+const inputElement = harness.routeNativeElement.querySelector<HTMLInputElement>(
+  '[data-cy="modal-input"]'
+)
 
 inputElement.value = '100'
 inputElement.dispatchEvent(new Event('input')) // <- Missing line
 
 harness.detectChanges()
 
-expect(buttonElement.disabled).toBeTruthy() // Test pass
+const buttonElement =
+  harness.routeNativeElement.querySelector<HTMLButtonElement>(
+    '[data-cy="confirm-button"]'
+  )
+
+expect(buttonElement.disabled).toBeFalsy() // Test fails
 ```
