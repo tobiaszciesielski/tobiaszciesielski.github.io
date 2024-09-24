@@ -21,7 +21,7 @@ const { lesson } = Astro.props
 const { Content } = await lesson.render()
 ---
 
-<Layout title="Blog • Tobiasz Ciesielski">
+<Layout title=`${lesson.data.title} • Tobiasz Ciesielski`>
   <div class="mb-10">
     <a href="/today-i-learned" class="group text-sm text-gray-500">
       ← <span class="group-hover:underline">Go back</span></a
