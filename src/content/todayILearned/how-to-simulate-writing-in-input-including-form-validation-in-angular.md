@@ -47,5 +47,5 @@ const buttonElement =
     '[data-cy="confirm-button"]'
   )
 
-expect(buttonElement.disabled).toBeFalsy() // Test fails
+expect(buttonElement.disabled).toBeFalsy() // Test passes
 ```
