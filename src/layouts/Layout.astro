@@ -50,7 +50,9 @@ const currentPath = Astro.url.pathname
 
           <a
             href="/talks"
-            class={currentPath === '/talks' ? 'underline' : 'hover:underline'}
+            class={currentPath.includes('/talks')
+              ? 'underline'
+              : 'hover:underline'}
           >
             <li class="sm:text-sm">Talks</li>
           </a>
