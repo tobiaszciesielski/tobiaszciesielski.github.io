@@ -1,6 +1,6 @@
 ---
 title: NgRx Component Store [Part 1]
-description:
+description: ''
 publicationDate: 2024-09-24
 image: http://abba.com/image.png
 ---
