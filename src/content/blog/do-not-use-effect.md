@@ -199,4 +199,4 @@ Josh Morony [compared](https://www.youtube.com/watch?v=IAmWwbKF2Ec&t=219s) `effe
 
 `computed` function is much cleaner and especially - **declarative**.
 
-I highly recommend you to write such example by yourself - its eye opening.
+I highly recommend you to write such an example by yourself - its eye-opening.
