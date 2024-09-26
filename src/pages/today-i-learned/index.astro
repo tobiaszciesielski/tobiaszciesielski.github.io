@@ -30,7 +30,7 @@ lessons = lessons.sort(
         <li>
           <a href={`/today-i-learned/${lesson.slug}`}>
             <div class="flex gap-3 items-top">
-              <div class="text-slate-600">
+              <div class="text-slate-600 whitespace-nowrap">
                 {formatDate(lesson.data.publicationDate, 'numeric')}
               </div>
               <div class="hover:underline ">{lesson.data.title}</div>
