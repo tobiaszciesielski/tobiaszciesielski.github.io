@@ -1,5 +1,5 @@
 ---
-title: How did I overcame lack of learner talent as a software developer?
+title: How did I overcome lack of learner talent as a software developer?
 description: ''
 publicationDate: 2024-09-28
 image: http://no-image.com
