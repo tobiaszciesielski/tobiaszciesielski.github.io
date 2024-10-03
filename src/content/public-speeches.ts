@@ -62,7 +62,7 @@ export const publicSpeeches: PublicSpeech[] = [
       'https://docs.google.com/presentation/d/1E6vaLQ79e5bhKOj2ko6W39JhaN7EJhS9Zfog3ctPfNk',
     date: new Date('2023-02-28'),
     image: 'fuksuj-2023.png',
-    recording: 'https://www.youtube.com/watch?v=Ri-_LA4BmEY',
+    recording: 'https://www.youtube.com/watch?v=YKjcCtgXJm8',
   },
   {
     topic: 'Styles, components, architecture in Frontend',
