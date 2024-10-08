@@ -88,6 +88,9 @@ userGreetings$ = of(this.user).pipe(
 
 ## Secondly, we can create custom operator that will filter all nullish values
 
+This is more reusable option that can be used everywhere.
+It has some cons. It will not check nested values.
+
 Implementation of such operator can look like this.
 
 ```ts
@@ -120,3 +123,5 @@ userGreetings$ = of(this.user).pipe(
   })
 )
 ```
+
+Use what suits your needs best :)
