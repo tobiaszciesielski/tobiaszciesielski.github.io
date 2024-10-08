@@ -1,9 +1,9 @@
 ---
-title: How to narrow type after Rxjs filter() operator?
+title: How to narrow type of filter() operator in Rxjs?
 publicationDate: 2024-10-07
 ---
 
-Consider we have following property in our Angular component:
+Consider following property in our Angular component:
 
 ```ts
 private user: User | null;
@@ -28,7 +28,7 @@ userGreetings$ = of(this.user).pipe(
 )
 ```
 
-The problem with filter operator is that it doesn't narrow type. Inside `map` operator our parameter has type `User | null` which is not true.
+The problem with filter operator is it doesn't narrow type. Inside `map` operator our parameter has type `User | null`.
 
 To get rid of `null` we can do couple things.
 
@@ -65,6 +65,23 @@ userGreetings$ = of(this.user).pipe(
   map((user) => {
     // user type is User. No need for optional chaining
     return `Greetings ${user.name} with id ${user.id}` operator
+  })
+)
+```
+
+We can just simply put it inline
+
+```ts
+userGreetings$ = of(this.user).pipe(
+  tap((user) => {
+    if (!user) {
+      this.fetchUser()
+    }
+  }),
+  filter((user): user is User => !!user),
+  map((user) => {
+    // user type is User
+    return `Greetings ${user.name} with id ${user.id}`
   })
 )
 ```
