@@ -118,3 +118,9 @@ Based on this implementation and quick investigation I am sure Angular hooks are
 But is it good practice ❗️❓
 
 I am far to say it's good or bad practice. I think it is important to be aware what are we doing. We can achieve such behavior by using [resolver](https://angular.dev/api/router/ResolveFn).
+
+---
+
+Further reading:
+
+- https://stackoverflow.com/questions/56092083/async-await-in-angular-ngoninit
