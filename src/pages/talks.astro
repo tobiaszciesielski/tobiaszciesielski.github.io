@@ -36,14 +36,16 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                 </div>
 
                 <div class="flex self-end text-sm md:text-base">
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    class="text-pink-500 hover:underline"
-                    href={speech.slides}
-                  >
-                    Slides
-                  </a>
+                  {speech.slides && (
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      class="text-pink-500 hover:underline"
+                      href={speech.slides}
+                    >
+                      Slides
+                    </a>
+                  )}
                   {speech.recording && (
                     <>
                       <span class="mx-2 ">•</span>

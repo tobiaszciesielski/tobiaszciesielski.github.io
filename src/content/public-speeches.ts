@@ -1,5 +1,25 @@
 export const publicSpeeches: PublicSpeech[] = [
   {
+    topic:
+      'From Legacy to Modern Angular: Refactoring and Delivering Projects with Confidence – A Case Study',
+    language: 'EN',
+    event: 'NG Poland Conf',
+    place: 'Warsaw, Poland',
+    date: new Date('2024-11-06'),
+    image: 'ngpoland2024.png',
+  },
+  {
+    topic: 'TailwindCSS - Why you should have it in your project?',
+    language: 'PL',
+    event: 'F/UX/UI #13',
+    place: 'Lodz, Poland',
+    slides:
+      'https://docs.google.com/presentation/d/1YBPybVwNNvDf2g33nJR5R0-42ONuTlEcQPzdaJa_RVs/edit#slide=id.p',
+    date: new Date('2024-10-03'),
+    image: 'fuxui13.jpg',
+    recording: 'https://www.youtube.com/watch?v=mgBS2hXrCwM',
+  },
+  {
     topic: 'TailwindCSS - Why you should have it in your project?',
     language: 'PL',
     event: 'Meet.js Kielce',
@@ -32,9 +52,9 @@ export const publicSpeeches: PublicSpeech[] = [
   },
   {
     topic:
-      '[Angular Best Practices] Reactive data flow with RxJS and bulletproof component design',
+      'Angular Best Practices - Reactive data flow with RxJS and bulletproof component design',
     language: 'EN',
-    event: 'NgPoland',
+    event: 'NG Poland Conf',
     place: 'Warsaw, Poland',
     slides:
       'https://docs.google.com/presentation/d/1cDelji88_O0bj66FC9nxk3E1_yePcPGulbQso7JdgOA',
