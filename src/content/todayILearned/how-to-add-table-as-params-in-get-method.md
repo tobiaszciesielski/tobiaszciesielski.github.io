@@ -1,5 +1,5 @@
 ---
-title: How to add table as params in GET method??
+title: How to add table as params in GET method?
 publicationDate: 2024-09-17
 ---
 
