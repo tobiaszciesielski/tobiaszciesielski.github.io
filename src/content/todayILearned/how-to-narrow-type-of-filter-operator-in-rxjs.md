@@ -86,6 +86,16 @@ userGreetings$ = of(this.user).pipe(
 )
 ```
 
+or use little magic with `Boolean` ✨
+
+```ts
+userGreetings$ = of(this.user).pipe(
+  // ...
+  filter(Boolean)
+  // ...
+)
+```
+
 ## Secondly, we can create custom operator that will filter all nullish values
 
 This is more reusable option that can be used everywhere.
