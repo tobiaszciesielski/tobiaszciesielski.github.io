@@ -74,8 +74,8 @@ export class MonthsToPeriodPipe implements PipeTransform {
     }
   }
 
-  public transform(value: BillingCycleFrequency): BillingPeriod {
-    return BillingCycleFrequencyToBillingPeriodPipe.transform(value)
+  public transform(value: 1 | 3 | 12): 'Month' | 'Quarter' | 'Year' {
+    return MonthsToPeriodPipe.transform(value)
   }
 }
 ```
