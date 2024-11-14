@@ -104,7 +104,7 @@ import { monthsToPeriodMap } from '../path'
   template: '<div> {{ monthsToPeriodMap[months] }} <div>',
 })
 export class MyComponent {
-  #monthsToPeriodMap = monthsToPeriodMap
+  monthsToPeriodMap = monthsToPeriodMap
 
   someFunction(months) {
     const period = monthsToPeriodMap[months]
