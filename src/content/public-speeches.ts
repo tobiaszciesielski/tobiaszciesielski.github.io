@@ -76,7 +76,7 @@ export const publicSpeeches: PublicSpeech[] = [
   {
     topic: 'How to develop design system without hurting yourself?',
     language: 'PL',
-    event: 'F/UKS/UI',
+    event: 'F/UX/UI #3',
     place: 'Lodz, Poland',
     slides:
       'https://docs.google.com/presentation/d/1E6vaLQ79e5bhKOj2ko6W39JhaN7EJhS9Zfog3ctPfNk',
