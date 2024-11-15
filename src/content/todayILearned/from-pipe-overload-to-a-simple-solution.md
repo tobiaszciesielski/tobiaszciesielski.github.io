@@ -63,7 +63,7 @@ I figured out that I can create static method of class I have. But I couldn't fi
 ```ts
 @Pipe({ name: 'toPeriod', standalone: true })
 export class MonthsToPeriodPipe implements PipeTransform {
-  public transform(value: 1 | 3 | 12): 'Month' | 'Quarter' | 'Year' {
+  public static transform(value: 1 | 3 | 12): 'Month' | 'Quarter' | 'Year' {
     switch (value) {
       case 1:
         return 'Month'
