@@ -89,7 +89,7 @@ const mailing: Email = {
 
 I hope this short post will be useful for you.
 
-Jump to Typescript playground [HERE](https://www.typescriptlang.org/play/?#code/JYOwLgpgTgZghgYwgAgEoQcADsC5kDeycAXMgM5hSgDmAvgFCiSyIoDKeAJtIcgLZxgAGzKVqIGskYMwATywoAooJHIAvIQbJkwLmRABXfgCNoAbm0CI5cnBoQxVWgzrIAZMgAUVgD5adQOQYKAB7fjJ0TBw8MEsgnTBQsk4QHih4wMYdfwIrIJDwlO4LfMCkyIxsXHBMnUYASksGBFCQSgEhYVoyFS6NAMC9MgBGABoy-hs7BzIAIgAJCGFhULmJgrCIwjc4cjQqmPAN8uSd4n2o6tjXIA) to play with it :)
+Jump to Typescript playground [HERE](https://www.typescriptlang.org/play/?#code/JYOwLgpgTgZghgYwgAgEoQcADsC5kDeycAXMgM5hSgDmAvgFCiSyIoDKeAJtIcgEZlK1EDWSMGYAJ5YUAUQC2cYABtkAXkINkyYFzIgArgv7QA3NuQKI5cnBoQhVWgzrIAZMgAUlgD5adQOQYKAB7BTJ0TBw8MAsgnTBQsk4QHih4wMYdfwJLIJDwlO5zfMCkyIxsXHBMnUYASgsGBFCQSitlFVoyRS6NAMC9MgBGABoy61t7R2QAIgAJCBUVULmJgrCIwjc4cjQqmPAN8uSd4n2o6tjXIA) to play with it :)
 
 Here is also good example how to exclude some fields from your interface
 [https://stackoverflow.com/questions/44425344/typescript-interface-with-xor-barstring-xor-cannumber](https://stackoverflow.com/questions/44425344/typescript-interface-with-xor-barstring-xor-cannumber)
