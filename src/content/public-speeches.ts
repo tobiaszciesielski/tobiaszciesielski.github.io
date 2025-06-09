@@ -1,6 +1,17 @@
 export const publicSpeeches: PublicSpeech[] = [
   {
     topic:
+      "How I implemented a payment module in a month and didn't break anything?",
+    language: 'EN',
+    event: 'Meet.js Warsaw ',
+    place: 'Warsaw, Poland',
+    date: new Date('2025-04-15'),
+    image: 'meet-js-2024.png',
+    slides:
+      'https://docs.google.com/presentation/d/1iYWUiNmko7yUHYscA7B1E-nIDsvRuRpgKf3KQjnXc3c/edit?usp=sharing',
+  },
+  {
+    topic:
       'From Legacy to Modern Angular: Refactoring and Delivering Projects with Confidence – A Case Study',
     language: 'EN',
     event: 'NG Poland Conf',
