@@ -1,7 +1,7 @@
 ---
 import Image from 'astro/components/Image.astro'
 import Layout from '../layouts/Layout.astro'
-import meImage from '../resources/images/me.png'
+import meImage from '../resources/images/me.webp'
 ---
 
 <Layout title="Tobiasz Ciesielski • Front-end Developer">
@@ -24,7 +24,7 @@ import meImage from '../resources/images/me.png'
 
       <p class="mb-4">
         Nothing is impossible for me. I have proven this to myself many times.
-        One of my greatest achievements is:
+        But one of the biggest achievement is:
       </p>
 
       <p class="mb-4">
@@ -42,12 +42,16 @@ import meImage from '../resources/images/me.png'
         On this blog I want to share insights into my professional journey 🫡
       </p>
     </div>
-    <div class="self-center w-full max-w-[250px] sm:-mt-10 relative">
+    <div class="self-center w-full max-w-[250px] sm:-mt-16 relative">
       <div
         class="w-full absolute h-8 bg-gradient-to-b from-transparent to-slate-950 bottom-0"
       >
       </div>
-      <Image src={meImage} alt="Image of Tobiasz" />
+      <Image
+        class="object-cover h-[400px] object-top"
+        src={meImage}
+        alt="Image of Tobiasz"
+      />
     </div>
   </div>
 </Layout>
