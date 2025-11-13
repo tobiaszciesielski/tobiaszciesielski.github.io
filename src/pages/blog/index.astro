@@ -4,6 +4,10 @@ const posts = await getCollection('blog')
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import { formatDate } from '../../utils/date'
+
+const sortedPosts = posts.sort(
+  (a, b) => a.data.publicationDate.getTime() - b.data.publicationDate.getTime()
+)
 ---
 
 <Layout title="Blog • Tobiasz.Dev">
@@ -11,7 +15,7 @@ import { formatDate } from '../../utils/date'
 
   <ul class="flex flex-col gap-5">
     {
-      posts.map((post) => (
+      sortedPosts.reverse().map((post) => (
         <li>
           <a href={`/blog/${post.slug}`}>
             <div class="hover:underline text-lg">{post.data.title}</div>
