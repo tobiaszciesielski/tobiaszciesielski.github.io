@@ -6,12 +6,12 @@ import Layout from '../../layouts/Layout.astro'
 import { formatDate } from '../../utils/date'
 ---
 
-<Layout title="Blog • Tobiasz Ciesielski">
+<Layout title="Blog • Tobiasz.Dev">
   <h1 class="text-3xl tracking-wider mb-10">Blog ✍️</h1>
 
   <ul class="flex flex-col gap-5">
     {
-      posts.reverse().map((post) => (
+      posts.map((post) => (
         <li>
           <a href={`/blog/${post.slug}`}>
             <div class="hover:underline text-lg">{post.data.title}</div>
