@@ -100,8 +100,9 @@ I use **Cursor**, which has the best-in-class autocompletion, and I overuse it. 
 
 
 ## Hardware
-- 💻 MacBook Pro 14", M4 Pro chip, 1TB and 48Gb of RAM.
-- 🎧 EarPods and AirPods 3
-- 🖥️ Monitor Samsung C49RG90SSR
-- 🐭 Apple Magic Mouse / Logitech MX Master 3
-- ⌨️ Apple Magic Keyboard (ISO)
+- 💻 MacBook Pro 14", M4 Pro, 1TB SSD, 48Gb RAM,
+- 🎧 EarPods and AirPods 4,
+- 🖥️ Monitor Samsung C49RG90SSR,
+- 💡Baseus I-Wok Pro,
+- 🐭 Apple Magic Mouse / Logitech MX Master 3,
+- ⌨️ Apple Magic Keyboard (ISO) / Logitech MX Keys Mini
